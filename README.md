@@ -2,17 +2,28 @@
 
 > **Final Year Project · CSE82 · AI-Driven Intelligent Education System Analyzer**
 
+**Frontend**&nbsp;
 ![React](https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-Modules-CC6699?style=flat-square&logo=sass&logoColor=white)
 ![Recharts](https://img.shields.io/badge/Recharts-2.10-22B5BF?style=flat-square)
-![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Render](https://img.shields.io/badge/Deployed-Render-46E3B7?style=flat-square&logo=render&logoColor=white)
+
+**Backend / ML Training**&nbsp;
+![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-1.7-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.x-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-2.x-013243?style=flat-square&logo=numpy&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-2.x-189fdd?style=flat-square)
+![Seaborn](https://img.shields.io/badge/Seaborn-0.13-4C72B0?style=flat-square)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-3.10-11557C?style=flat-square)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
 ---
 
 ## Preview
 
-![EduAnalytics Dashboard Preview](./docs/preview.png)
+![EduAnalytics Dashboard Preview](./docs/image.png)
 
 > *EDA & Correlations tab — Pearson r horizontal bar chart + Country Comparison Radar*
 
@@ -66,7 +77,7 @@
 | Charts | Recharts 2.10 |
 | Icons | Remix Icon 4 |
 | Fonts | Space Grotesk · Plus Jakarta Sans |
-| Deployment | Vercel |
+| Deployment | Render |
 
 ---
 
@@ -145,9 +156,9 @@ npm run preview    # preview the production build locally
 
 ---
 
-## Deployment — Vercel
+## Deployment — Render
 
-### Vercel Project Settings
+### Render Project Settings
 
 | Setting | Value |
 |---------|-------|
