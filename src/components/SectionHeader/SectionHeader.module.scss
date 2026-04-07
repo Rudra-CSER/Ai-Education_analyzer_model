@@ -1,0 +1,52 @@
+@use '../../styles/variables' as v;
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  background: v.$n100;
+  border: 1px solid v.$n200;
+  border-radius: v.$r-sm;
+  flex-shrink: 0;
+  margin-top: 1px;
+
+  i {
+    font-size: 16px;
+    color: v.$n500;
+  }
+
+  span {
+    font-family: v.$font-display;
+    font-size: v.$text-xs;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: v.$n400;
+  }
+}
+
+.text {
+  flex: 1;
+}
+
+.title {
+  font-family: v.$font-display;
+  font-size: v.$text-xl;
+  font-weight: 700;
+  color: v.$color-text;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  margin-top: 3px;
+}

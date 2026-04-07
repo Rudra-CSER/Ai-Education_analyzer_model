@@ -1,0 +1,18 @@
+@use '../../styles/variables' as v;
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: v.$s2;
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  margin-top: v.$s3;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+  flex-shrink: 0;
+}

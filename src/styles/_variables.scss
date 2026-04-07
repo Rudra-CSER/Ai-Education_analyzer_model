@@ -1,0 +1,93 @@
+// ─── Typography ───────────────────────────────────────────────────────────────
+$font-sans:    'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-display: 'Space Grotesk', -apple-system, sans-serif;
+
+// ─── Brand Colors ─────────────────────────────────────────────────────────────
+$primary:       #10B981;
+$primary-dark:  #059669;
+$primary-light: #ECFDF5;
+$primary-muted: rgba(16, 185, 129, 0.12);
+
+$purple:        #8B5CF6;
+$purple-light:  #EDE9FE;
+$purple-muted:  rgba(139, 92, 246, 0.12);
+
+$amber:         #F59E0B;
+$amber-light:   #FFFBEB;
+$amber-muted:   rgba(245, 158, 11, 0.12);
+
+$red:           #EF4444;
+$red-light:     #FEF2F2;
+$red-muted:     rgba(239, 68, 68, 0.12);
+
+$blue:          #3B82F6;
+$blue-light:    #EFF6FF;
+$blue-muted:    rgba(59, 130, 246, 0.12);
+
+// ─── Neutral Palette ──────────────────────────────────────────────────────────
+$n0:   #FFFFFF;
+$n50:  #FAFAF9;
+$n100: #F4F3F0;
+$n200: #E8E5DF;
+$n300: #D4CFC6;
+$n400: #A8A49C;
+$n500: #78756C;
+$n600: #575451;
+$n800: #2A2927;
+$n900: #1A1917;
+$n950: #0C0C0B;
+
+// ─── Semantic Tokens ──────────────────────────────────────────────────────────
+$color-bg:          #F0EFE9;
+$color-surface:     $n0;
+$color-border:      $n200;
+$color-text:        $n900;
+$color-muted:       $n500;
+$color-dark-bg:     $n950;
+$color-dark-border: $n800;
+$color-dark-surface:#161614;
+
+// ─── Type Scale ───────────────────────────────────────────────────────────────
+$text-xs:   10px;
+$text-sm:   11px;
+$text-base: 13px;
+$text-md:   14px;
+$text-lg:   16px;
+$text-xl:   18px;
+$text-2xl:  22px;
+$text-3xl:  30px;
+$text-4xl:  46px;
+$text-5xl:  58px;
+
+// ─── Spacing (8pt grid) ───────────────────────────────────────────────────────
+$s1: 4px;
+$s2: 8px;
+$s3: 12px;
+$s4: 16px;
+$s5: 20px;
+$s6: 24px;
+$s7: 28px;
+$s8: 32px;
+$s10: 40px;
+$s12: 48px;
+
+// ─── Border Radius ────────────────────────────────────────────────────────────
+$r-xs:   6px;
+$r-sm:   8px;
+$r-md:   12px;
+$r-lg:   16px;
+$r-xl:   20px;
+$r-pill: 999px;
+
+// ─── Shadows ──────────────────────────────────────────────────────────────────
+$shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.04);
+$shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.04);
+$shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(0, 0, 0, 0.05);
+$shadow-glow-primary: 0 0 0 3px rgba(16, 185, 129, 0.18);
+
+// ─── Motion ───────────────────────────────────────────────────────────────────
+$ease:           cubic-bezier(0.4, 0, 0.2, 1);
+$ease-out:       cubic-bezier(0, 0, 0.2, 1);
+$transition:     all 0.2s $ease;
+$transition-fast:all 0.15s $ease;

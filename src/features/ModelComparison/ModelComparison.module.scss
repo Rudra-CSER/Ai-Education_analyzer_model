@@ -1,0 +1,81 @@
+@use '../../styles/variables' as v;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: v.$s4;
+}
+
+.modelCard {
+  background: v.$n50;
+  border-radius: v.$r-md;
+  padding: v.$s5;
+  border: 1px solid v.$n200;
+  transition: v.$transition;
+
+  &:hover {
+    box-shadow: v.$shadow-md;
+    transform: translateY(-1px);
+  }
+}
+
+.modelTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: v.$s3;
+}
+
+.modelName {
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  font-weight: 500;
+}
+
+.modelBadge {
+  font-size: v.$text-xs;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: v.$r-pill;
+}
+
+.r2 {
+  font-family: v.$font-display;
+  font-size: v.$text-3xl;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.r2Label {
+  font-size: v.$text-xs;
+  color: v.$n400;
+  margin-top: v.$s1;
+  margin-bottom: v.$s2;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.rmse {
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  margin-bottom: v.$s4;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  i { font-size: 14px; }
+}
+
+.barTrack {
+  height: 5px;
+  background: v.$n200;
+  border-radius: v.$r-pill;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: v.$r-pill;
+  transition: width 0.7s v.$ease-out;
+}

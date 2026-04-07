@@ -1,0 +1,147 @@
+@use '../../styles/variables' as v;
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: v.$s6;
+  align-items: start;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: v.$s4;
+}
+
+.sliderRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sliderMeta {
+  display: flex;
+  align-items: center;
+  gap: v.$s2;
+}
+
+.sliderIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: v.$r-xs;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  i { font-size: 14px; }
+}
+
+.sliderLabel {
+  flex: 1;
+  font-size: v.$text-md;
+  color: v.$color-text;
+  font-weight: 500;
+}
+
+.sliderVal {
+  font-family: v.$font-display;
+  font-size: v.$text-lg;
+  font-weight: 700;
+  min-width: 22px;
+  text-align: right;
+}
+
+.range {
+  width: 100%;
+  height: 5px;
+  appearance: none;
+  background: v.$n200;
+  border-radius: v.$r-pill;
+  outline: none;
+  cursor: pointer;
+  accent-color: var(--accent);
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+    transition: transform 0.15s;
+  }
+
+  &::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+}
+
+// Result panel
+.result {
+  position: sticky;
+  top: 90px;
+}
+
+.resultInner {
+  background: v.$color-dark-bg;
+  border-radius: v.$r-lg;
+  padding: v.$s6;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$s3;
+}
+
+.resultLabel {
+  font-size: v.$text-xs;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: v.$n500;
+}
+
+.resultScore {
+  font-family: v.$font-display;
+  font-size: v.$text-5xl;
+  font-weight: 800;
+  line-height: 1;
+  transition: color 0.3s v.$ease;
+}
+
+.resultTrack {
+  width: 100%;
+  height: 6px;
+  background: #2A2927;
+  border-radius: v.$r-pill;
+  overflow: hidden;
+}
+
+.resultFill {
+  height: 100%;
+  border-radius: v.$r-pill;
+  transition: width 0.35s v.$ease-out, background 0.3s;
+}
+
+.resultOutOf {
+  font-size: v.$text-xs;
+  color: v.$n500;
+}
+
+.resultTag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: v.$text-sm;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: v.$r-pill;
+
+  i { font-size: 14px; }
+}

@@ -1,0 +1,52 @@
+@use '../../styles/variables' as v;
+
+.toggleGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$s2;
+  margin-bottom: v.$s4;
+}
+
+.btn {
+  font-size: v.$text-sm;
+  font-family: v.$font-sans;
+  font-weight: 500;
+  padding: 5px 13px;
+  border-radius: v.$r-pill;
+  cursor: pointer;
+  background: v.$n100;
+  border: 1.5px solid v.$n200;
+  color: v.$n500;
+  transition: v.$transition-fast;
+
+  &:hover {
+    border-color: v.$n300;
+    color: v.$color-text;
+  }
+}
+
+.btnActive {
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: v.$s3;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: v.$text-sm;
+  font-weight: 500;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

@@ -1,0 +1,139 @@
+@use '../../styles/variables' as v;
+
+.scoreRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$s6;
+  margin-bottom: v.$s6;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: v.$s4;
+  }
+}
+
+.scoreBox {
+  text-align: center;
+  background: v.$color-surface;
+  border-radius: v.$r-lg;
+  border: 1px solid v.$n200;
+  padding: v.$s5 v.$s8;
+  box-shadow: v.$shadow-xs;
+  min-width: 160px;
+}
+
+.scoreLabel {
+  font-size: v.$text-xs;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: v.$color-muted;
+  margin-bottom: v.$s2;
+}
+
+.scoreValue {
+  font-family: v.$font-display;
+  font-size: v.$text-4xl;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.scoreCountry {
+  font-size: v.$text-sm;
+  color: v.$n400;
+  margin-top: v.$s1;
+}
+
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$s2;
+}
+
+.arrowLine {
+  i {
+    font-size: 28px;
+    color: v.$primary;
+    display: block;
+  }
+}
+
+.improveBadge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: v.$font-display;
+  font-size: v.$text-md;
+  font-weight: 700;
+  color: v.$primary;
+  background: v.$primary-muted;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: v.$r-pill;
+  padding: 5px 14px;
+
+  i { font-size: 14px; }
+}
+
+.recs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: v.$s3;
+}
+
+.recCard {
+  background: v.$color-surface;
+  border-radius: v.$r-md;
+  border: 1px solid v.$n200;
+  padding: v.$s4;
+  transition: v.$transition;
+
+  &:hover {
+    box-shadow: v.$shadow-md;
+    transform: translateY(-1px);
+  }
+}
+
+.recIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: v.$r-sm;
+  background: v.$primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: v.$s3;
+
+  i {
+    font-size: 20px;
+    color: v.$primary;
+  }
+}
+
+.recSource {
+  font-size: v.$text-xs;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: v.$n400;
+  margin-bottom: v.$s1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  i { font-size: 11px; }
+}
+
+.recMetric {
+  font-size: v.$text-md;
+  font-weight: 600;
+  color: v.$color-text;
+  margin-bottom: v.$s1;
+}
+
+.recValue {
+  font-size: v.$text-sm;
+  color: v.$primary;
+  font-weight: 500;
+}

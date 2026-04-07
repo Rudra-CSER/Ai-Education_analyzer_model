@@ -1,0 +1,171 @@
+@use './styles/variables' as v;
+
+// ─── App Shell ────────────────────────────────────────────────────────────────
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+.header {
+  background: v.$color-dark-bg;
+  color: v.$n0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid v.$color-dark-border;
+  backdrop-filter: blur(12px);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px v.$s7 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: v.$s3;
+    padding: v.$s4;
+  }
+}
+
+// ─── Logo ─────────────────────────────────────────────────────────────────────
+.logo {
+  display: flex;
+  align-items: center;
+  gap: v.$s3;
+}
+
+.logoMark {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-dark 100%);
+  border-radius: v.$r-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 4px 12px rgba(16,185,129,0.35);
+  flex-shrink: 0;
+
+  i {
+    font-size: 20px;
+    color: v.$n0;
+  }
+}
+
+.logoTitle {
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: v.$text-xl;
+  color: v.$n0;
+  letter-spacing: -0.02em;
+}
+
+.logoSub {
+  font-size: v.$text-xs;
+  color: v.$n500;
+  margin-top: 1px;
+}
+
+// ─── Header Meta Badges ───────────────────────────────────────────────────────
+.headerMeta {
+  display: flex;
+  gap: v.$s2;
+
+  @media (max-width: 480px) {
+    display: none;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: v.$text-xs;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: v.$r-pill;
+
+  i { font-size: 12px; }
+}
+
+.badgeGreen  { background: rgba(16,185,129,0.15);  color: #5DCAA5; border: 1px solid rgba(16,185,129,0.25); }
+.badgePurple { background: rgba(139,92,246,0.15);  color: #B39DFB; border: 1px solid rgba(139,92,246,0.25); }
+.badgeAmber  { background: rgba(245,158,11,0.15);  color: #FCD06E; border: 1px solid rgba(245,158,11,0.25); }
+
+// ─── Navigation ───────────────────────────────────────────────────────────────
+.nav {
+  display: flex;
+  border-top: 1px solid v.$color-dark-border;
+  padding: 0 v.$s5;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  color: v.$n500;
+  font-family: v.$font-sans;
+  font-size: v.$text-md;
+  font-weight: 500;
+  padding: 11px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: v.$transition-fast;
+  white-space: nowrap;
+
+  i { font-size: 15px; }
+
+  &:hover {
+    color: v.$n0;
+  }
+}
+
+.navBtnActive {
+  color: v.$primary;
+  border-bottom-color: v.$primary;
+
+  i { color: v.$primary; }
+}
+
+// ─── Main Content ─────────────────────────────────────────────────────────────
+.main {
+  flex: 1;
+  padding: v.$s6 v.$s7;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: v.$s5;
+
+  @media (max-width: 768px) {
+    padding: v.$s4;
+    gap: v.$s4;
+  }
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+.footer {
+  text-align: center;
+  padding: v.$s4;
+  font-size: v.$text-sm;
+  color: v.$n400;
+  border-top: 1px solid v.$color-border;
+  background: v.$color-surface;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$s2;
+
+  i { font-size: 14px; color: v.$primary; }
+}

@@ -1,0 +1,63 @@
+@use '../../styles/variables' as v;
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: v.$s2;
+  margin-top: v.$s4;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: v.$text-sm;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: v.$r-pill;
+}
+
+.chipDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chipCount {
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.tooltip {
+  background: v.$color-surface;
+  border: 1px solid v.$color-border;
+  border-radius: v.$r-md;
+  padding: 10px 14px;
+  box-shadow: v.$shadow-md;
+  font-family: v.$font-sans;
+  min-width: 140px;
+}
+
+.tooltipName {
+  font-size: v.$text-md;
+  font-weight: 600;
+  color: v.$color-text;
+  margin-bottom: 3px;
+}
+
+.tooltipMeta {
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  margin-bottom: 4px;
+}
+
+.tooltipCluster {
+  font-size: v.$text-sm;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  i { font-size: 13px; }
+}

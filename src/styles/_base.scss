@@ -1,0 +1,49 @@
+@use 'variables' as v;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: v.$font-sans;
+  font-size: v.$text-base;
+  color: v.$color-text;
+  background: v.$color-bg;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+// Recharts global overrides
+.recharts-tooltip-wrapper {
+  .recharts-default-tooltip {
+    border-radius: v.$r-sm !important;
+    border: 1px solid v.$color-border !important;
+    box-shadow: v.$shadow-md !important;
+    font-family: v.$font-sans !important;
+    font-size: v.$text-base !important;
+    padding: 8px 12px !important;
+  }
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-family: v.$font-sans !important;
+}

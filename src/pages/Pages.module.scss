@@ -1,0 +1,7 @@
+@use '../styles/variables' as v;
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: v.$s4;
+}
