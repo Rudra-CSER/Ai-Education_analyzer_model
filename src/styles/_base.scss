@@ -10,6 +10,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  // Remove native scrollbar — replaced by top progress bar
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
 }
 
 body {
@@ -32,7 +35,7 @@ input, select, textarea {
   font-family: inherit;
 }
 
-// Recharts global overrides
+// ─── Recharts overrides ───────────────────────────────────────────────────────
 .recharts-tooltip-wrapper {
   .recharts-default-tooltip {
     border-radius: v.$r-sm !important;

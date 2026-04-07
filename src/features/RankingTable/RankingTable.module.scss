@@ -3,28 +3,31 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .row {
   display: grid;
-  grid-template-columns: 40px 30px 140px 1fr 58px 158px;
+  grid-template-columns: 44px 32px 148px 1fr 62px 164px;
   align-items: center;
   gap: 10px;
-  padding: 10px 12px;
+  padding: 11px 14px;
   border-radius: v.$r-md;
   border: 1px solid transparent;
   transition: v.$transition-fast;
   cursor: default;
+  position: relative;
 
   @media (max-width: 768px) {
-    grid-template-columns: 34px 26px 1fr 56px;
+    grid-template-columns: 36px 28px 1fr 58px;
   }
 }
 
 .rowHovered {
   background: v.$n50;
   border-color: v.$n200;
+
+  .name { color: v.$n900; }
 }
 
 .rank {
@@ -32,25 +35,25 @@
   font-size: v.$text-md;
   font-weight: 700;
   text-align: center;
+  line-height: 1;
 }
 
 .flag {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1;
 }
 
 .name {
   font-size: v.$text-md;
   font-weight: 500;
-  color: v.$color-text;
+  color: v.$n600;
+  transition: color 0.15s;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+  @media (max-width: 768px) { display: none; }
 }
 
 .barWrap {
-  height: 6px;
+  height: 5px;
   background: v.$n100;
   border-radius: v.$r-pill;
   overflow: hidden;
@@ -59,7 +62,7 @@
 .bar {
   height: 100%;
   border-radius: v.$r-pill;
-  transition: width 0.5s v.$ease-out;
+  transition: width 0.55s v.$ease-out;
 }
 
 .score {
@@ -68,6 +71,7 @@
   font-weight: 700;
   text-align: right;
   color: v.$color-text;
+  letter-spacing: -0.01em;
 }
 
 .cluster {
@@ -77,8 +81,7 @@
   border-radius: v.$r-pill;
   text-align: center;
   white-space: nowrap;
+  letter-spacing: 0.01em;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
+  @media (max-width: 768px) { display: none; }
 }

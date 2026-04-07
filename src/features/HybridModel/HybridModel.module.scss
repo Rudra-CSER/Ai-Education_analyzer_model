@@ -6,21 +6,36 @@
   justify-content: center;
   gap: v.$s6;
   margin-bottom: v.$s6;
+  background: linear-gradient(135deg, #0D0D0B, #0f1a14);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: v.$r-lg;
+  padding: v.$s6 v.$s8;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(16,185,129,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
 
   @media (max-width: 600px) {
     flex-direction: column;
     gap: v.$s4;
+    padding: v.$s5;
   }
 }
 
 .scoreBox {
   text-align: center;
-  background: v.$color-surface;
-  border-radius: v.$r-lg;
-  border: 1px solid v.$n200;
-  padding: v.$s5 v.$s8;
-  box-shadow: v.$shadow-xs;
-  min-width: 160px;
+  position: relative;
+  z-index: 1;
+  min-width: 140px;
 }
 
 .scoreLabel {
@@ -28,7 +43,7 @@
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: v.$color-muted;
+  color: v.$n500;
   margin-bottom: v.$s2;
 }
 
@@ -41,7 +56,7 @@
 
 .scoreCountry {
   font-size: v.$text-sm;
-  color: v.$n400;
+  color: v.$n600;
   margin-top: v.$s1;
 }
 
@@ -50,14 +65,15 @@
   flex-direction: column;
   align-items: center;
   gap: v.$s2;
+  position: relative;
+  z-index: 1;
 }
 
-.arrowLine {
-  i {
-    font-size: 28px;
-    color: v.$primary;
-    display: block;
-  }
+.arrowLine i {
+  font-size: 32px;
+  color: v.$primary;
+  display: block;
+  opacity: 0.8;
 }
 
 .improveBadge {
@@ -68,8 +84,8 @@
   font-size: v.$text-md;
   font-weight: 700;
   color: v.$primary;
-  background: v.$primary-muted;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.28);
   border-radius: v.$r-pill;
   padding: 5px 14px;
 
@@ -78,20 +94,37 @@
 
 .recs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
   gap: v.$s3;
 }
 
 .recCard {
-  background: v.$color-surface;
+  background: v.$n50;
   border-radius: v.$r-md;
   border: 1px solid v.$n200;
-  padding: v.$s4;
+  padding: v.$s4 v.$s4 v.$s5;
   transition: v.$transition;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, v.$primary, v.$purple);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
 
   &:hover {
     box-shadow: v.$shadow-md;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    border-color: v.$n300;
+
+    &::after { opacity: 1; }
   }
 }
 
@@ -117,7 +150,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: v.$n400;
-  margin-bottom: v.$s1;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -129,11 +162,11 @@
   font-size: v.$text-md;
   font-weight: 600;
   color: v.$color-text;
-  margin-bottom: v.$s1;
+  margin-bottom: 4px;
 }
 
 .recValue {
   font-size: v.$text-sm;
   color: v.$primary;
-  font-weight: 500;
+  font-weight: 600;
 }

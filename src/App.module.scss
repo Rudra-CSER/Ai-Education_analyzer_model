@@ -9,15 +9,29 @@
 
 // ─── Header ───────────────────────────────────────────────────────────────────
 .header {
-  background: v.$color-dark-bg;
+  background: linear-gradient(180deg, #0E0E0C 0%, #111110 100%);
   color: v.$n0;
   position: sticky;
   top: 0;
   z-index: 200;
-  border-bottom: 1px solid v.$color-dark-border;
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 4px 24px rgba(0,0,0,0.4);
 }
 
+// ─── Scroll Progress Bar ──────────────────────────────────────────────────────
+.scrollBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, v.$primary 0%, v.$purple 60%, v.$amber 100%);
+  border-radius: 0 v.$r-pill v.$r-pill 0;
+  transition: width 0.12s linear;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6), 0 0 4px rgba(139, 92, 246, 0.4);
+  z-index: 10;
+}
+
+// ─── Header Inner ─────────────────────────────────────────────────────────────
 .headerInner {
   display: flex;
   align-items: center;
@@ -28,7 +42,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: v.$s3;
-    padding: v.$s4;
+    padding: v.$s4 v.$s4 v.$s3;
   }
 }
 
@@ -40,18 +54,21 @@
 }
 
 .logoMark {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   background: linear-gradient(135deg, v.$primary 0%, v.$primary-dark 100%);
   border-radius: v.$r-md;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 4px 12px rgba(16,185,129,0.35);
   flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.10),
+    0 0 20px rgba(16,185,129,0.30),
+    0 2px 8px rgba(0,0,0,0.4);
 
   i {
-    font-size: 20px;
+    font-size: 19px;
     color: v.$n0;
   }
 }
@@ -62,22 +79,22 @@
   font-size: v.$text-xl;
   color: v.$n0;
   letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 .logoSub {
   font-size: v.$text-xs;
   color: v.$n500;
-  margin-top: 1px;
+  margin-top: 2px;
+  letter-spacing: 0.01em;
 }
 
-// ─── Header Meta Badges ───────────────────────────────────────────────────────
+// ─── Header Badges ────────────────────────────────────────────────────────────
 .headerMeta {
   display: flex;
   gap: v.$s2;
 
-  @media (max-width: 480px) {
-    display: none;
-  }
+  @media (max-width: 560px) { display: none; }
 }
 
 .badge {
@@ -86,21 +103,36 @@
   gap: 5px;
   font-size: v.$text-xs;
   font-weight: 600;
-  padding: 4px 11px;
+  padding: 5px 12px;
   border-radius: v.$r-pill;
+  letter-spacing: 0.01em;
 
   i { font-size: 12px; }
 }
 
-.badgeGreen  { background: rgba(16,185,129,0.15);  color: #5DCAA5; border: 1px solid rgba(16,185,129,0.25); }
-.badgePurple { background: rgba(139,92,246,0.15);  color: #B39DFB; border: 1px solid rgba(139,92,246,0.25); }
-.badgeAmber  { background: rgba(245,158,11,0.15);  color: #FCD06E; border: 1px solid rgba(245,158,11,0.25); }
+.badgeGreen {
+  background: rgba(16,185,129,0.12);
+  color: #6EE7B7;
+  border: 1px solid rgba(16,185,129,0.22);
+}
+.badgePurple {
+  background: rgba(139,92,246,0.12);
+  color: #C4B5FD;
+  border: 1px solid rgba(139,92,246,0.22);
+}
+.badgeAmber {
+  background: rgba(245,158,11,0.12);
+  color: #FDE68A;
+  border: 1px solid rgba(245,158,11,0.22);
+}
 
 // ─── Navigation ───────────────────────────────────────────────────────────────
 .nav {
   display: flex;
-  border-top: 1px solid v.$color-dark-border;
-  padding: 0 v.$s5;
+  align-items: center;
+  gap: 2px;
+  padding: 6px v.$s5 8px;
+  border-top: 1px solid rgba(255,255,255,0.05);
   overflow-x: auto;
   scrollbar-width: none;
 
@@ -108,33 +140,44 @@
 }
 
 .navBtn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: none;
+  background: transparent;
   border: none;
   color: v.$n500;
   font-family: v.$font-sans;
-  font-size: v.$text-md;
+  font-size: v.$text-base;
   font-weight: 500;
-  padding: 11px 16px;
+  padding: 7px 14px;
+  border-radius: v.$r-sm;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
   transition: v.$transition-fast;
   white-space: nowrap;
 
-  i { font-size: 15px; }
+  i {
+    font-size: 15px;
+    transition: v.$transition-fast;
+  }
 
   &:hover {
-    color: v.$n0;
+    color: v.$n200;
+    background: rgba(255,255,255,0.06);
   }
 }
 
 .navBtnActive {
   color: v.$primary;
-  border-bottom-color: v.$primary;
+  background: rgba(16, 185, 129, 0.10);
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.20) inset;
+  font-weight: 600;
 
   i { color: v.$primary; }
+
+  &:hover {
+    color: v.$primary;
+    background: rgba(16, 185, 129, 0.14);
+  }
 }
 
 // ─── Main Content ─────────────────────────────────────────────────────────────
@@ -157,7 +200,7 @@
 // ─── Footer ───────────────────────────────────────────────────────────────────
 .footer {
   text-align: center;
-  padding: v.$s4;
+  padding: v.$s4 v.$s6;
   font-size: v.$text-sm;
   color: v.$n400;
   border-top: 1px solid v.$color-border;
@@ -166,6 +209,10 @@
   align-items: center;
   justify-content: center;
   gap: v.$s2;
+  letter-spacing: 0.01em;
 
-  i { font-size: 14px; color: v.$primary; }
+  i {
+    font-size: 14px;
+    color: v.$primary;
+  }
 }

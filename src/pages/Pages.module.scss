@@ -1,7 +1,134 @@
 @use '../styles/variables' as v;
 
+// ─── Stat Cards Row ───────────────────────────────────────────────────────────
 .statsRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: v.$s4;
+}
+
+// ─── Hero Banner ──────────────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #0D0D0B 0%, #0f1a14 55%, #0D1612 100%);
+  border: 1px solid rgba(16, 185, 129, 0.14);
+  border-radius: v.$r-xl;
+  padding: v.$s8 v.$s8 v.$s7;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: v.$s6;
+  min-height: 180px;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: unset;
+    padding: v.$s6;
+  }
+}
+
+// radial glow blob
+.heroGlow {
+  position: absolute;
+  top: -60px;
+  right: -40px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.heroChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: v.$text-xs;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: v.$primary;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.22);
+  border-radius: v.$r-pill;
+  padding: 4px 12px;
+  margin-bottom: v.$s3;
+
+  i { font-size: 13px; }
+}
+
+.heroTitle {
+  font-family: v.$font-display;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: v.$s2;
+}
+
+.heroSub {
+  font-size: v.$text-md;
+  color: v.$n500;
+  max-width: 480px;
+  line-height: 1.6;
+
+  strong {
+    color: v.$n300;
+    font-weight: 600;
+  }
+}
+
+// ── Key numbers on right side
+.heroStats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: v.$s5;
+  flex-shrink: 0;
+  padding: v.$s4 v.$s5;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: v.$r-lg;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.heroStatVal {
+  font-family: v.$font-display;
+  font-size: v.$text-2xl;
+  font-weight: 800;
+  color: v.$primary;
+  line-height: 1;
+}
+
+.heroStatLabel {
+  font-size: v.$text-xs;
+  color: v.$n500;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.heroStatDivider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.07);
 }
