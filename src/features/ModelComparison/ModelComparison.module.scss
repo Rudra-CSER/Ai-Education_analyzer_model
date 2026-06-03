@@ -2,21 +2,26 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: v.$s4;
 }
 
 .modelCard {
   background: v.$n50;
   border-radius: v.$r-md;
-  padding: v.$s5;
   border: 1px solid v.$n200;
+  overflow: hidden;
   transition: v.$transition;
 
   &:hover {
     box-shadow: v.$shadow-md;
     transform: translateY(-1px);
   }
+}
+
+.modelCardInner {
+  padding: v.$s5;
+  border-left: 4px solid transparent;
 }
 
 .modelTop {
@@ -72,10 +77,131 @@
   background: v.$n200;
   border-radius: v.$r-pill;
   overflow: hidden;
+  margin-bottom: v.$s3;
 }
 
 .barFill {
   height: 100%;
   border-radius: v.$r-pill;
   transition: width 0.7s v.$ease-out;
+}
+
+// ── Expand toggle ──────────────────────────────────────────────────────────────
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: v.$text-xs;
+  color: v.$n400;
+  font-family: v.$font-sans;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.15s;
+
+  &:hover { color: v.$n600; }
+
+  i {
+    font-size: 14px;
+    transition: transform 0.2s v.$ease;
+  }
+
+  &.open i.chevron {
+    transform: rotate(180deg);
+  }
+}
+
+// ── Dropdown panel ─────────────────────────────────────────────────────────────
+.dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s v.$ease-out;
+
+  &.open {
+    max-height: 320px;
+  }
+}
+
+.dropdownInner {
+  padding: v.$s4 v.$s5 v.$s5;
+  border-top: 1px solid v.$n200;
+  background: v.$n100;
+  display: flex;
+  flex-direction: column;
+  gap: v.$s4;
+}
+
+.dropSection {
+  display: flex;
+  flex-direction: column;
+  gap: v.$s2;
+}
+
+.dropLabel {
+  font-size: v.$text-xs;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: v.$n400;
+}
+
+.paramRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: v.$text-sm;
+  color: v.$color-text;
+
+  .paramKey {
+    color: v.$color-muted;
+    font-weight: 400;
+  }
+
+  .paramVal {
+    font-weight: 600;
+    font-family: v.$font-display;
+  }
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: v.$s2;
+  font-size: v.$text-sm;
+
+  .featureName {
+    flex: 1;
+    color: v.$color-muted;
+  }
+
+  .featureBar {
+    width: 60px;
+    height: 4px;
+    background: v.$n200;
+    border-radius: v.$r-pill;
+    overflow: hidden;
+  }
+
+  .featureBarFill {
+    height: 100%;
+    border-radius: v.$r-pill;
+  }
+
+  .featureVal {
+    font-size: v.$text-xs;
+    font-weight: 600;
+    font-family: v.$font-display;
+    min-width: 42px;
+    text-align: right;
+  }
+}
+
+.dropDesc {
+  font-size: v.$text-sm;
+  color: v.$color-muted;
+  line-height: 1.5;
 }

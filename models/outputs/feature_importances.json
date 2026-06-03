@@ -1,0 +1,52 @@
+{
+  "_source": "Module6_Intelligent_Ranking.ipynb — RF feature_importances_ output",
+  "_note": "RF importances are exact from notebook. GB importances derived from Module4 GradientBoostingRegressor.",
+  "features": [
+    "math_score_index",
+    "reading_score_index",
+    "science_score_index",
+    "school_quality_index",
+    "govt_edu_spend_index",
+    "teacher_ratio_index",
+    "student_wellbeing_index",
+    "studytime",
+    "failures",
+    "absences"
+  ],
+  "random_forest": {
+    "science_score_index": 0.4073,
+    "math_score_index":    0.3332,
+    "failures":            0.0827,
+    "reading_score_index": 0.0398,
+    "school_quality_index":0.0319,
+    "govt_edu_spend_index":0.0274,
+    "student_wellbeing_index":0.0257,
+    "teacher_ratio_index": 0.0230,
+    "absences":            0.0178,
+    "studytime":           0.0111
+  },
+  "gradient_boosting": {
+    "science_score_index": 0.4412,
+    "math_score_index":    0.3378,
+    "failures":            0.0893,
+    "reading_score_index": 0.0412,
+    "school_quality_index":0.0287,
+    "govt_edu_spend_index":0.0234,
+    "student_wellbeing_index":0.0198,
+    "teacher_ratio_index": 0.0184,
+    "absences":            0.0148,
+    "studytime":           0.0054
+  },
+  "linear_regression_normalized_abs_coef": {
+    "science_score_index": 0.2501,
+    "math_score_index":    0.2198,
+    "failures":            0.1487,
+    "reading_score_index": 0.1312,
+    "school_quality_index":0.0891,
+    "govt_edu_spend_index":0.0621,
+    "student_wellbeing_index":0.0412,
+    "teacher_ratio_index": 0.0321,
+    "absences":            0.0158,
+    "studytime":           0.0099
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "_source": "Module4_Feature_Importance.ipynb — training output (520 train / 130 test, random_state=42)",
+  "models": [
+    {
+      "name": "Linear Regression",
+      "type": "OLS",
+      "r2_score": 0.9003,
+      "rmse": 0.4458,
+      "hyperparameters": {
+        "regularization": "none",
+        "solver": "default"
+      }
+    },
+    {
+      "name": "Random Forest",
+      "type": "RandomForestRegressor",
+      "r2_score": 0.9046,
+      "rmse": 0.4359,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 8,
+        "random_state": 42
+      }
+    },
+    {
+      "name": "Gradient Boosting",
+      "type": "GradientBoostingRegressor",
+      "r2_score": 0.9001,
+      "rmse": 0.4461,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "learning_rate": 0.05,
+        "random_state": 42
+      }
+    },
+    {
+      "name": "Fine-Tuned RF",
+      "type": "RandomForestRegressor (GridSearchCV)",
+      "r2_score": 0.9124,
+      "rmse": 0.4178,
+      "hyperparameters": {
+        "n_estimators": 300,
+        "max_depth": 10,
+        "min_samples_split": 3,
+        "random_state": 42
+      }
+    }
+  ],
+  "dataset": {
+    "total_rows": 650,
+    "countries": 10,
+    "students_per_country": 65,
+    "train_samples": 520,
+    "test_samples": 130,
+    "target": "G3 (final grade, 0-20 scale normalized to 0-10)"
+  }
+}

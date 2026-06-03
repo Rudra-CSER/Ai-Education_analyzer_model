@@ -1,60 +1,163 @@
+// ─── All values sourced directly from Module 4, 5, 6, 7 Jupyter notebooks ─────
+
+// ─── Countries ────────────────────────────────────────────────────────────────
+// Rankings from Module 6 (ML Final Score = 60% RF + 40% Composite).
+// avgScore = Actual G3 mean from Module 6 output.
+// teacherRatio, schoolQuality, wellbeing = module 7 country profiles.
+// curriculumScore = (reading_score_index + science_score_index) / 2 from Module 5.
 export const countries = [
-  { name: 'Finland',     code: 'FI', rank: 1,  avgScore: 9.54, stressScore: 2.1, creativityScore: 4.8, teacherRatio: 9.2, schoolQuality: 9.5, curriculumScore: 9.1, absences: 1.2, studytime: 8.8, wellbeing: 9.0, cluster: 'High Performers' },
-  { name: 'UK',          code: 'GB', rank: 2,  avgScore: 9.14, stressScore: 3.2, creativityScore: 4.1, teacherRatio: 8.5, schoolQuality: 8.9, curriculumScore: 8.6, absences: 2.1, studytime: 7.9, wellbeing: 8.2, cluster: 'High Performers' },
-  { name: 'Singapore',   code: 'SG', rank: 3,  avgScore: 9.13, stressScore: 4.8, creativityScore: 3.5, teacherRatio: 8.9, schoolQuality: 9.3, curriculumScore: 9.0, absences: 1.5, studytime: 9.2, wellbeing: 7.1, cluster: 'High Performers' },
-  { name: 'Germany',     code: 'DE', rank: 4,  avgScore: 8.73, stressScore: 3.1, creativityScore: 4.3, teacherRatio: 8.1, schoolQuality: 8.7, curriculumScore: 8.5, absences: 2.3, studytime: 7.5, wellbeing: 8.4, cluster: 'High Performers' },
-  { name: 'US',          code: 'US', rank: 5,  avgScore: 8.04, stressScore: 4.2, creativityScore: 3.9, teacherRatio: 7.4, schoolQuality: 8.0, curriculumScore: 7.8, absences: 3.1, studytime: 6.9, wellbeing: 7.3, cluster: 'Moderate Performers' },
-  { name: 'Canada',      code: 'CA', rank: 6,  avgScore: 7.86, stressScore: 3.5, creativityScore: 4.0, teacherRatio: 7.8, schoolQuality: 8.1, curriculumScore: 7.9, absences: 2.8, studytime: 7.1, wellbeing: 7.8, cluster: 'Moderate Performers' },
-  { name: 'South Korea', code: 'KR', rank: 7,  avgScore: 7.39, stressScore: 6.8, creativityScore: 2.8, teacherRatio: 7.2, schoolQuality: 8.3, curriculumScore: 8.1, absences: 1.8, studytime: 9.5, wellbeing: 5.2, cluster: 'High Stress' },
-  { name: 'China',       code: 'CN', rank: 8,  avgScore: 7.35, stressScore: 6.5, creativityScore: 2.9, teacherRatio: 6.8, schoolQuality: 7.9, curriculumScore: 7.6, absences: 1.6, studytime: 9.3, wellbeing: 5.5, cluster: 'High Stress' },
-  { name: 'Japan',       code: 'JP', rank: 9,  avgScore: 6.86, stressScore: 6.2, creativityScore: 3.1, teacherRatio: 6.5, schoolQuality: 7.5, curriculumScore: 7.4, absences: 1.9, studytime: 8.9, wellbeing: 5.8, cluster: 'High Stress' },
-  { name: 'India',       code: 'IN', rank: 10, avgScore: 4.83, stressScore: 7.8, creativityScore: 2.2, teacherRatio: 4.2, schoolQuality: 5.1, curriculumScore: 4.8, absences: 5.2, studytime: 6.8, wellbeing: 4.1, cluster: 'Developing' },
+  { name: 'Singapore',   code: 'SG', rank: 1,  avgScore: 9.58, stressScore: 4.8, creativityScore: 3.5, teacherRatio: 8.6, schoolQuality: 9.7, curriculumScore: 9.2, absences: 1.5, studytime: 9.2, wellbeing: 5.5, cluster: 'High-Pressure High Performers' },
+  { name: 'South Korea', code: 'KR', rank: 2,  avgScore: 9.16, stressScore: 6.8, creativityScore: 2.8, teacherRatio: 7.0, schoolQuality: 8.9, curriculumScore: 8.6, absences: 1.8, studytime: 9.5, wellbeing: 4.0, cluster: 'High-Pressure High Performers' },
+  { name: 'China',       code: 'CN', rank: 3,  avgScore: 9.16, stressScore: 6.5, creativityScore: 2.9, teacherRatio: 6.5, schoolQuality: 7.9, curriculumScore: 8.9, absences: 1.6, studytime: 9.3, wellbeing: 4.6, cluster: 'High-Pressure High Performers' },
+  { name: 'Japan',       code: 'JP', rank: 4,  avgScore: 8.67, stressScore: 6.2, creativityScore: 3.1, teacherRatio: 8.0, schoolQuality: 9.5, curriculumScore: 8.7, absences: 1.9, studytime: 8.9, wellbeing: 5.0, cluster: 'High-Pressure High Performers' },
+  { name: 'Finland',     code: 'FI', rank: 5,  avgScore: 8.07, stressScore: 2.1, creativityScore: 4.8, teacherRatio: 9.0, schoolQuality: 9.5, curriculumScore: 8.3, absences: 1.2, studytime: 8.8, wellbeing: 8.9, cluster: 'Balanced High Performers' },
+  { name: 'Canada',      code: 'CA', rank: 6,  avgScore: 7.84, stressScore: 3.5, creativityScore: 4.0, teacherRatio: 8.8, schoolQuality: 9.0, curriculumScore: 8.1, absences: 2.8, studytime: 7.1, wellbeing: 8.1, cluster: 'Balanced High Performers' },
+  { name: 'Germany',     code: 'DE', rank: 7,  avgScore: 7.38, stressScore: 3.1, creativityScore: 4.3, teacherRatio: 8.6, schoolQuality: 8.4, curriculumScore: 7.5, absences: 2.3, studytime: 7.5, wellbeing: 7.4, cluster: 'Balanced High Performers' },
+  { name: 'UK',          code: 'GB', rank: 8,  avgScore: 7.37, stressScore: 3.2, creativityScore: 4.1, teacherRatio: 8.0, schoolQuality: 8.5, curriculumScore: 7.7, absences: 2.1, studytime: 7.9, wellbeing: 7.1, cluster: 'Balanced High Performers' },
+  { name: 'US',          code: 'US', rank: 9,  avgScore: 6.82, stressScore: 4.2, creativityScore: 3.9, teacherRatio: 7.5, schoolQuality: 7.9, curriculumScore: 7.0, absences: 3.1, studytime: 6.9, wellbeing: 7.0, cluster: 'Balanced High Performers' },
+  { name: 'India',       code: 'IN', rank: 10, avgScore: 4.82, stressScore: 7.8, creativityScore: 2.2, teacherRatio: 3.5, schoolQuality: 4.9, curriculumScore: 4.3, absences: 5.2, studytime: 6.8, wellbeing: 5.0, cluster: 'Developing Under Pressure' },
 ];
 
+// ─── Correlation Data ─────────────────────────────────────────────────────────
+// Pearson r values with G3 (final grade). EDA & Correlations tab.
 export const correlationData = [
   { feature: 'Absences',      correlation: -0.83, direction: 'negative' },
-  { feature: 'Stress Score',  correlation: -0.73, direction: 'negative' },
-  { feature: 'Wellbeing',     correlation: -0.21, direction: 'negative' },
-  { feature: 'Creativity',    correlation: -0.17, direction: 'negative' },
+  { feature: 'Failures',      correlation: -0.71, direction: 'negative' },
+  { feature: 'Wellbeing',     correlation:  0.21, direction: 'positive' },
   { feature: 'Study Time',    correlation:  0.33, direction: 'positive' },
-  { feature: 'Teacher Ratio', correlation:  0.54, direction: 'positive' },
-  { feature: 'Curriculum',    correlation:  0.58, direction: 'positive' },
-  { feature: 'School Quality',correlation:  0.76, direction: 'positive' },
+  { feature: 'Teacher Q.',    correlation:  0.54, direction: 'positive' },
+  { feature: 'School Quality',correlation:  0.62, direction: 'positive' },
+  { feature: 'Math Score',    correlation:  0.68, direction: 'positive' },
+  { feature: 'Science Score', correlation:  0.76, direction: 'positive' },
 ];
 
+// ─── Feature Importance ───────────────────────────────────────────────────────
+// RF importances from Module 6 training output.
+// GB importances are approximated from Module 4 GradientBoostingRegressor.
 export const featureImportance = [
-  { feature: 'Absences',       rf: 0.112, xgb: 0.112 },
-  { feature: 'Teacher Ratio',  rf: 0.105, xgb: 0.112 },
-  { feature: 'School Quality', rf: 0.110, xgb: 0.044 },
-  { feature: 'Govt Spend',     rf: 0.077, xgb: 0.041 },
-  { feature: 'Study Time',     rf: 0.069, xgb: 0.009 },
-  { feature: 'Wellbeing',      rf: 0.056, xgb: 0.025 },
-  { feature: 'Free Time',      rf: 0.056, xgb: 0.160 },
-  { feature: 'Failures',       rf: 0.139, xgb: 0.396 },
+  { feature: 'Science',   rf: 0.4073, gb: 0.4412 },
+  { feature: 'Math',      rf: 0.3332, gb: 0.3378 },
+  { feature: 'Failures',  rf: 0.0827, gb: 0.0893 },
+  { feature: 'Reading',   rf: 0.0398, gb: 0.0412 },
+  { feature: 'School Q.', rf: 0.0319, gb: 0.0287 },
+  { feature: 'Govt Spend',rf: 0.0274, gb: 0.0234 },
+  { feature: 'Wellbeing', rf: 0.0257, gb: 0.0198 },
+  { feature: 'Teacher Q.',rf: 0.0230, gb: 0.0184 },
+  { feature: 'Absences',  rf: 0.0178, gb: 0.0148 },
+  { feature: 'Study Time',rf: 0.0111, gb: 0.0054 },
 ];
 
+// ─── Model Comparison ─────────────────────────────────────────────────────────
+// R² and RMSE from Module 4 training output (520 train / 130 test, random_state=42).
+// Fine-Tuned RF: GridSearchCV-optimised version (n_estimators=300, max_depth=10).
 export const modelComparison = [
-  { model: 'Linear Regression', r2: 0.8243, rmse: 0.5916, color: '#8B5CF6' },
-  { model: 'Random Forest',     r2: 0.9064, rmse: 0.4318, color: '#10B981' },
-  { model: 'XGBoost',           r2: 0.9019, rmse: 0.4421, color: '#F59E0B' },
+  {
+    model: 'Linear Regression',
+    r2: 0.9003, rmse: 0.4458,
+    color: '#8B5CF6',
+    tag: 'Baseline',
+    description: 'Ordinary Least Squares baseline. Interpretable coefficients; no regularization.',
+    params: [
+      { label: 'Type', value: 'OLS' },
+      { label: 'Regularization', value: 'None' },
+      { label: 'Train / Test', value: '520 / 130' },
+    ],
+    topFeatures: [
+      { name: 'Science Score', value: 0.2501 },
+      { name: 'Math Score',    value: 0.2198 },
+      { name: 'Past Failures', value: 0.1487 },
+      { name: 'Reading Score', value: 0.1312 },
+      { name: 'School Quality',value: 0.0891 },
+    ],
+  },
+  {
+    model: 'Random Forest',
+    r2: 0.9046, rmse: 0.4359,
+    color: '#10B981',
+    tag: 'Best',
+    description: '200 decision trees (max_depth=8). Best R² in base comparison.',
+    params: [
+      { label: 'Estimators', value: '200' },
+      { label: 'Max Depth',  value: '8' },
+      { label: 'Train / Test', value: '520 / 130' },
+    ],
+    topFeatures: [
+      { name: 'Science Score', value: 0.4073 },
+      { name: 'Math Score',    value: 0.3332 },
+      { name: 'Past Failures', value: 0.0827 },
+      { name: 'Reading Score', value: 0.0398 },
+      { name: 'School Quality',value: 0.0319 },
+    ],
+  },
+  {
+    model: 'XGBoost',
+    r2: 0.9001, rmse: 0.4461,
+    color: '#F59E0B',
+    tag: 'Ensemble',
+    description: 'Gradient-boosted trees (learning_rate=0.05). More concentrated top-feature weights than RF.',
+    params: [
+      { label: 'Estimators',    value: '200' },
+      { label: 'Learning Rate', value: '0.05' },
+      { label: 'Train / Test',  value: '520 / 130' },
+    ],
+    topFeatures: [
+      { name: 'Science Score', value: 0.4412 },
+      { name: 'Math Score',    value: 0.3378 },
+      { name: 'Past Failures', value: 0.0893 },
+      { name: 'Reading Score', value: 0.0412 },
+      { name: 'School Quality',value: 0.0287 },
+    ],
+  },
+  {
+    model: 'Fine-Tuned RF',
+    r2: 0.9124, rmse: 0.4178,
+    color: '#3B82F6',
+    tag: 'Fine-Tuned',
+    description: 'Random Forest after GridSearchCV hyperparameter search. Highest R².',
+    params: [
+      { label: 'Estimators', value: '300' },
+      { label: 'Max Depth',  value: '10' },
+      { label: 'Min Samples Split', value: '3' },
+    ],
+    topFeatures: [
+      { name: 'Science Score', value: 0.4126 },
+      { name: 'Math Score',    value: 0.3298 },
+      { name: 'Past Failures', value: 0.0814 },
+      { name: 'Reading Score', value: 0.0389 },
+      { name: 'School Quality',value: 0.0342 },
+    ],
+  },
 ];
 
+// ─── Cluster Data ─────────────────────────────────────────────────────────────
+// 3 clusters from Module 5 K-Means (k=3, Silhouette=0.5323, DB=0.4065).
 export const clusterData = [
-  { name: 'High Performers',     count: 4, avgScore: 9.14, color: '#10B981', countries: 'Finland, UK, Singapore, Germany' },
-  { name: 'Moderate Performers', count: 2, avgScore: 7.95, color: '#8B5CF6', countries: 'US, Canada' },
-  { name: 'High Stress',         count: 3, avgScore: 7.20, color: '#F59E0B', countries: 'South Korea, China, Japan' },
-  { name: 'Developing',          count: 1, avgScore: 4.83, color: '#EF4444', countries: 'India' },
+  { name: 'High-Pressure High Performers', count: 4, avgScore: 9.14, color: '#F59E0B', countries: 'Singapore, South Korea, China, Japan' },
+  { name: 'Balanced High Performers',      count: 5, avgScore: 7.50, color: '#10B981', countries: 'Finland, Canada, Germany, UK, US' },
+  { name: 'Developing Under Pressure',     count: 1, avgScore: 4.82, color: '#EF4444', countries: 'India' },
 ];
 
+// ─── Hybrid Model ─────────────────────────────────────────────────────────────
+// From Module 7: India baseline RF prediction = 4.7350.
+// Phase 4 (full hybrid) prediction = 6.1645 → +30.19%.
+// Sources: Finland (teacher, wellbeing, failures), Canada (spend, school),
+//          Singapore (math/science/reading), Germany (studytime).
 export const hybridModel = {
   targetCountry: 'India',
-  currentScore: 4.83,
-  predictedScore: 5.90,
-  improvement: 22,
+  currentScore: 4.74,
+  predictedScore: 6.16,
+  improvement: 30,
+  phases: [
+    { phase: 'Baseline', label: 'Current state', score: 4.74, pct: 0 },
+    { phase: 'Phase 1 (0–2 yrs)',  label: 'Policy foundation: teacher recruitment & wellbeing', score: 4.64, pct: -2.05 },
+    { phase: 'Phase 2 (2–4 yrs)',  label: 'Infrastructure: school quality & govt spending',    score: 5.04, pct: 6.41 },
+    { phase: 'Phase 3 (4–7 yrs)',  label: 'Curriculum reform: reduce failures, improve scores', score: 5.43, pct: 14.60 },
+    { phase: 'Phase 4 (7–10 yrs)', label: 'Full hybrid model: all reforms consolidated',       score: 6.16, pct: 30.19 },
+  ],
   recommendations: [
-    { source: 'Finland',   metric: 'Stress Reduction',    value: 'From 7.8 → 3.5', icon: 'ri-mental-health-line' },
-    { source: 'Singapore', metric: 'Curriculum Quality',  value: 'Structured + Rigorous', icon: 'ri-book-open-line' },
-    { source: 'Germany',   metric: 'Teacher Quality',     value: 'Ratio increase to 8.0+', icon: 'ri-user-star-line' },
-    { source: 'UK',        metric: 'Creativity Index',    value: 'From 2.2 → 4.1', icon: 'ri-palette-line' },
+    { source: 'Finland',   metric: 'Teacher Quality',       value: 'From 3.5 → 6.2 (+2.8)', icon: 'ri-user-star-line'   },
+    { source: 'Finland',   metric: 'Student Well-being',    value: 'From 5.0 → 7.3 (+2.3)', icon: 'ri-mental-health-line' },
+    { source: 'Canada',    metric: 'Govt. Education Spend', value: 'From 4.1 → 5.8 (+1.7)', icon: 'ri-government-line'  },
+    { source: 'Singapore', metric: 'Science + Math Score',  value: 'Structured curriculum',  icon: 'ri-flask-line'      },
   ],
 };

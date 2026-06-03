@@ -1,0 +1,16 @@
+{
+  "_source": "Module6_Intelligent_Ranking.ipynb — compute_ranking() output",
+  "_formula": "Final Score = 60% × ML Predicted Score + 40% × Weighted Composite Score (normalized 60-100)",
+  "rankings": [
+    { "rank": 1,  "country": "Singapore",   "final_score": 100.00, "ml_score": 100.00, "composite_score": 100.00, "actual_g3": 9.575 },
+    { "rank": 2,  "country": "South Korea", "final_score": 95.39,  "ml_score": 95.37,  "composite_score": 95.42,  "actual_g3": 9.157 },
+    { "rank": 3,  "country": "China",       "final_score": 95.38,  "ml_score": 94.96,  "composite_score": 96.00,  "actual_g3": 9.163 },
+    { "rank": 4,  "country": "Japan",       "final_score": 92.99,  "ml_score": 90.73,  "composite_score": 96.37,  "actual_g3": 8.672 },
+    { "rank": 5,  "country": "Finland",     "final_score": 88.53,  "ml_score": 86.23,  "composite_score": 91.98,  "actual_g3": 8.068 },
+    { "rank": 6,  "country": "Canada",      "final_score": 87.23,  "ml_score": 85.70,  "composite_score": 89.53,  "actual_g3": 7.841 },
+    { "rank": 7,  "country": "Germany",     "final_score": 83.41,  "ml_score": 81.48,  "composite_score": 86.31,  "actual_g3": 7.379 },
+    { "rank": 8,  "country": "UK",          "final_score": 83.28,  "ml_score": 82.10,  "composite_score": 85.04,  "actual_g3": 7.371 },
+    { "rank": 9,  "country": "US",          "final_score": 77.80,  "ml_score": 76.35,  "composite_score": 79.98,  "actual_g3": 6.823 },
+    { "rank": 10, "country": "India",       "final_score": 60.00,  "ml_score": 60.00,  "composite_score": 60.00,  "actual_g3": 4.815 }
+  ]
+}

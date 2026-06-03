@@ -29,8 +29,8 @@ export default function FeatureImportance() {
             formatter={(v, name) => [v.toFixed(4), name]}
             contentStyle={{ borderRadius: 10, border: '1px solid #E8E5DF', fontSize: 12, fontFamily: 'Plus Jakarta Sans', boxShadow: '0 4px 16px rgba(0,0,0,0.07)' }}
           />
-          <Bar dataKey="rf"  name="Random Forest" fill="#10B981" radius={[4, 4, 0, 0]} maxBarSize={20} />
-          <Bar dataKey="xgb" name="XGBoost"       fill="#F59E0B" radius={[4, 4, 0, 0]} maxBarSize={20} />
+          <Bar dataKey="rf" name="Random Forest"     fill="#10B981" radius={[4, 4, 0, 0]} maxBarSize={20} />
+          <Bar dataKey="gb" name="XGBoost" fill="#F59E0B" radius={[4, 4, 0, 0]} maxBarSize={20} />
         </BarChart>
       </ResponsiveContainer>
       <div className={styles.legend}>

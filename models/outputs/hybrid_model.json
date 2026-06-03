@@ -1,0 +1,35 @@
+{
+  "_source": "Module7_Hybrid_Education_Model.ipynb",
+  "target_country": "India",
+  "baseline_rf_predicted_g3": 4.7350,
+  "hybrid_rf_predicted_g3": 6.1645,
+  "improvement_pct": 30.19,
+  "hybrid_config": [
+    { "feature": "teacher_ratio_index",    "source": "Finland",   "blend_alpha": 0.5, "india_value": 3.455, "hybrid_target": 6.229 },
+    { "feature": "student_wellbeing_index","source": "Finland",   "blend_alpha": 0.6, "india_value": 4.966, "hybrid_target": 7.302 },
+    { "feature": "govt_edu_spend_index",   "source": "Canada",    "blend_alpha": 0.4, "india_value": 4.088, "hybrid_target": 5.827 },
+    { "feature": "school_quality_index",   "source": "Canada",    "blend_alpha": 0.4, "india_value": 4.864, "hybrid_target": 6.514 },
+    { "feature": "math_score_index",       "source": "Singapore", "blend_alpha": 0.3, "india_value": 4.538, "hybrid_target": 6.021 },
+    { "feature": "reading_score_index",    "source": "Singapore", "blend_alpha": 0.3, "india_value": 4.259, "hybrid_target": 5.693 },
+    { "feature": "science_score_index",    "source": "Singapore", "blend_alpha": 0.3, "india_value": 4.265, "hybrid_target": 5.764 },
+    { "feature": "failures",               "source": "Finland",   "blend_alpha": 0.5, "india_value": 5.959, "hybrid_target": 3.735 },
+    { "feature": "absences",               "source": "Finland",   "blend_alpha": 0.5, "india_value": 5.200, "hybrid_target": 3.200 },
+    { "feature": "studytime",              "source": "Germany",   "blend_alpha": 0.3, "india_value": 6.800, "hybrid_target": 7.487 }
+  ],
+  "phased_roadmap": [
+    { "phase": "Baseline",          "alpha": 0.00, "predicted_g3": 4.7350, "improvement_pct":  0.00, "description": "Current state" },
+    { "phase": "Phase 1 (0-2 yrs)", "alpha": 0.20, "predicted_g3": 4.6381, "improvement_pct": -2.05, "description": "Policy foundation: teacher recruitment & wellbeing programmes" },
+    { "phase": "Phase 2 (2-4 yrs)", "alpha": 0.40, "predicted_g3": 5.0387, "improvement_pct":  6.41, "description": "Infrastructure: school quality & government spending uplift" },
+    { "phase": "Phase 3 (4-7 yrs)", "alpha": 0.70, "predicted_g3": 5.4265, "improvement_pct": 14.60, "description": "Curriculum reform: reduce failures, improve academic scores" },
+    { "phase": "Phase 4 (7-10 yrs)","alpha": 1.00, "predicted_g3": 6.1645, "improvement_pct": 30.19, "description": "Full hybrid model: all reforms consolidated" }
+  ],
+  "india_gap_analysis": [
+    { "feature": "Science Score",    "india": 4.265, "best_country": "Singapore", "best_value": 9.260, "gap": 4.994, "fi_weight": 0.4073, "weighted_gap": 2.0344 },
+    { "feature": "Math Score",       "india": 4.538, "best_country": "Singapore", "best_value": 9.483, "gap": 4.946, "fi_weight": 0.3332, "weighted_gap": 1.6482 },
+    { "feature": "Past Failures",    "india": 5.959, "best_country": "Singapore", "best_value": 1.274, "gap": 4.685, "fi_weight": 0.0827, "weighted_gap": 0.3872 },
+    { "feature": "Reading Score",    "india": 4.259, "best_country": "Singapore", "best_value": 9.040, "gap": 4.781, "fi_weight": 0.0398, "weighted_gap": 0.1904 },
+    { "feature": "School Quality",   "india": 4.864, "best_country": "Singapore", "best_value": 9.704, "gap": 4.840, "fi_weight": 0.0319, "weighted_gap": 0.1546 },
+    { "feature": "Govt. Spend",      "india": 4.088, "best_country": "Finland",   "best_value": 8.942, "gap": 4.854, "fi_weight": 0.0274, "weighted_gap": 0.1328 },
+    { "feature": "Teacher Quality",  "india": 3.455, "best_country": "Finland",   "best_value": 9.002, "gap": 5.547, "fi_weight": 0.0230, "weighted_gap": 0.1278 }
+  ]
+}

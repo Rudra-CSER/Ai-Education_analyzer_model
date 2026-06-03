@@ -20,18 +20,18 @@ export default function OverviewPage() {
         </div>
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
-            <span className={styles.heroStatVal}>9.54</span>
+            <span className={styles.heroStatVal}>9.58</span>
             <span className={styles.heroStatLabel}>Top Score</span>
           </div>
           <div className={styles.heroStatDivider} />
           <div className={styles.heroStat}>
-            <span className={styles.heroStatVal}>90.6%</span>
+            <span className={styles.heroStatVal}>91.2%</span>
             <span className={styles.heroStatLabel}>Best R²</span>
           </div>
           <div className={styles.heroStatDivider} />
           <div className={styles.heroStat}>
-            <span className={styles.heroStatVal}>+22%</span>
-            <span className={styles.heroStatLabel}>Predicted Gain</span>
+            <span className={styles.heroStatVal}>+30%</span>
+            <span className={styles.heroStatLabel}>India Gain</span>
           </div>
         </div>
       </div>
@@ -40,30 +40,30 @@ export default function OverviewPage() {
       <div className={styles.statsRow}>
         <StatCard
           label="Best Performer"
-          value="Finland"
-          sub="Avg Score · 9.54 / 10"
+          value="Singapore"
+          sub="Avg Score · 9.58 / 10"
           accent="#10B981"
           icon="ri-trophy-fill"
-          flag="🇫🇮"
+          flag="🇸🇬"
         />
         <StatCard
           label="Top ML Model"
-          value="Random Forest"
-          sub="R² Score · 0.9064"
+          value="Fine-Tuned RF"
+          sub="R² Score · 0.9124"
           accent="#8B5CF6"
           icon="ri-robot-2-line"
         />
         <StatCard
           label="Strongest Factor"
-          value="School Quality"
-          sub="Pearson r · 0.76 with G3"
+          value="Science Score"
+          sub="RF Importance · 0.407"
           accent="#3B82F6"
-          icon="ri-building-4-line"
+          icon="ri-flask-line"
         />
         <StatCard
           label="Needs Support"
           value="India"
-          sub="Avg Score · 4.83 / 10"
+          sub="Avg Score · 4.82 / 10"
           accent="#EF4444"
           icon="ri-alert-fill"
           flag="🇮🇳"

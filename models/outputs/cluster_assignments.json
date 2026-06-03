@@ -1,0 +1,48 @@
+{
+  "_source": "Module5_Country_Clustering_FIXED.ipynb — KMeans(n_clusters=3, random_state=42)",
+  "_metrics": {
+    "silhouette_score": 0.5323,
+    "davies_bouldin_score": 0.4065,
+    "pca_variance_pc1": 0.685,
+    "pca_variance_pc2": 0.291,
+    "pca_total_variance": 0.976
+  },
+  "clusters": [
+    {
+      "name": "High-Pressure High Performers",
+      "countries": ["China", "Japan", "Singapore", "South Korea"],
+      "count": 4,
+      "avg_g3": 9.14,
+      "avg_teacher_quality": 7.54,
+      "avg_wellbeing": 4.76,
+      "avg_govt_spend": 6.63,
+      "avg_failures": 1.55,
+      "avg_absences": 1.96,
+      "color_hex": "#F59E0B"
+    },
+    {
+      "name": "Balanced High Performers",
+      "countries": ["Canada", "Finland", "Germany", "UK", "US"],
+      "count": 5,
+      "avg_g3": 7.50,
+      "avg_teacher_quality": 8.39,
+      "avg_wellbeing": 7.68,
+      "avg_govt_spend": 8.23,
+      "avg_failures": 2.27,
+      "avg_absences": 3.23,
+      "color_hex": "#10B981"
+    },
+    {
+      "name": "Developing Under Pressure",
+      "countries": ["India"],
+      "count": 1,
+      "avg_g3": 4.82,
+      "avg_teacher_quality": 3.46,
+      "avg_wellbeing": 4.97,
+      "avg_govt_spend": 4.09,
+      "avg_failures": 5.96,
+      "avg_absences": 5.20,
+      "color_hex": "#EF4444"
+    }
+  ]
+}
