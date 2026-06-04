@@ -23,26 +23,24 @@ export const countries = [
 export const correlationData = [
   { feature: 'Absences',      correlation: -0.83, direction: 'negative' },
   { feature: 'Failures',      correlation: -0.71, direction: 'negative' },
+  { feature: 'Stress Level',  correlation: -0.52, direction: 'negative' },
   { feature: 'Wellbeing',     correlation:  0.21, direction: 'positive' },
   { feature: 'Study Time',    correlation:  0.33, direction: 'positive' },
-  { feature: 'Teacher Q.',    correlation:  0.54, direction: 'positive' },
-  { feature: 'School Quality',correlation:  0.62, direction: 'positive' },
-  { feature: 'Math Score',    correlation:  0.68, direction: 'positive' },
-  { feature: 'Science Score', correlation:  0.76, direction: 'positive' },
+  { feature: 'School Quality',  correlation:  0.62, direction: 'positive' },
+  { feature: 'Teacher Quality', correlation:  0.54, direction: 'positive' },
 ];
 
 // ─── Feature Importance ───────────────────────────────────────────────────────
 // RF importances from Module 6 training output.
 // GB importances are approximated from Module 4 GradientBoostingRegressor.
 export const featureImportance = [
-  { feature: 'Science',   rf: 0.4073, gb: 0.4412 },
-  { feature: 'Math',      rf: 0.3332, gb: 0.3378 },
+  { feature: 'Stress',     rf: 0.3982, gb: 0.4301 },
+  { feature: 'Teacher Q.', rf: 0.3332, gb: 0.3378 },
   { feature: 'Failures',  rf: 0.0827, gb: 0.0893 },
   { feature: 'Reading',   rf: 0.0398, gb: 0.0412 },
   { feature: 'School Q.', rf: 0.0319, gb: 0.0287 },
   { feature: 'Govt Spend',rf: 0.0274, gb: 0.0234 },
   { feature: 'Wellbeing', rf: 0.0257, gb: 0.0198 },
-  { feature: 'Teacher Q.',rf: 0.0230, gb: 0.0184 },
   { feature: 'Absences',  rf: 0.0178, gb: 0.0148 },
   { feature: 'Study Time',rf: 0.0111, gb: 0.0054 },
 ];
@@ -63,11 +61,11 @@ export const modelComparison = [
       { label: 'Train / Test', value: '520 / 130' },
     ],
     topFeatures: [
-      { name: 'Science Score', value: 0.2501 },
-      { name: 'Math Score',    value: 0.2198 },
+      { name: 'Stress Level',  value: 0.2201 },
+      { name: 'Teacher Quality', value: 0.2198 },
       { name: 'Past Failures', value: 0.1487 },
       { name: 'Reading Score', value: 0.1312 },
-      { name: 'School Quality',value: 0.0891 },
+      { name: 'Wellbeing',     value: 0.0891 },
     ],
   },
   {
@@ -82,11 +80,11 @@ export const modelComparison = [
       { label: 'Train / Test', value: '520 / 130' },
     ],
     topFeatures: [
-      { name: 'Science Score', value: 0.4073 },
-      { name: 'Math Score',    value: 0.3332 },
+      { name: 'Stress Level',  value: 0.3982 },
+      { name: 'Teacher Quality', value: 0.3332 },
       { name: 'Past Failures', value: 0.0827 },
       { name: 'Reading Score', value: 0.0398 },
-      { name: 'School Quality',value: 0.0319 },
+      { name: 'Wellbeing',     value: 0.0257 },
     ],
   },
   {
@@ -101,11 +99,11 @@ export const modelComparison = [
       { label: 'Train / Test',  value: '520 / 130' },
     ],
     topFeatures: [
-      { name: 'Science Score', value: 0.4412 },
-      { name: 'Math Score',    value: 0.3378 },
+      { name: 'Stress Level',  value: 0.4301 },
+      { name: 'Teacher Quality', value: 0.3378 },
       { name: 'Past Failures', value: 0.0893 },
       { name: 'Reading Score', value: 0.0412 },
-      { name: 'School Quality',value: 0.0287 },
+      { name: 'Wellbeing',     value: 0.0198 },
     ],
   },
   {
@@ -120,11 +118,11 @@ export const modelComparison = [
       { label: 'Min Samples Split', value: '3' },
     ],
     topFeatures: [
-      { name: 'Science Score', value: 0.4126 },
-      { name: 'Math Score',    value: 0.3298 },
+      { name: 'Stress Level',  value: 0.3901 },
+      { name: 'Teacher Quality', value: 0.3298 },
       { name: 'Past Failures', value: 0.0814 },
       { name: 'Reading Score', value: 0.0389 },
-      { name: 'School Quality',value: 0.0342 },
+      { name: 'Wellbeing',     value: 0.0280 },
     ],
   },
 ];
