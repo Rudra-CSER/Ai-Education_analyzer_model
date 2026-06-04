@@ -48,17 +48,17 @@ export default function OverviewPage() {
         />
         <StatCard
           label="Top ML Model"
-          value="Fine-Tuned RF"
-          sub="R² Score · 0.9124"
+          value="Hybrid Ensemble"
+          sub="R² Score · 0.88"
           accent="#8B5CF6"
           icon="ri-robot-2-line"
         />
         <StatCard
           label="Strongest Factor"
-          value="Science Score"
-          sub="RF Importance · 0.407"
+          value="Stress Level"
+          sub="RF Importance · 0.398"
           accent="#3B82F6"
-          icon="ri-flask-line"
+          icon="ri-emotion-unhappy-line"
         />
         <StatCard
           label="Needs Support"

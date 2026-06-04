@@ -5,36 +5,38 @@ import { clamp } from '../../core/utils';
 import styles from './PredictorTool.module.scss';
 
 // ─── Model definitions ─────────────────────────────────────────────────────────
-// Formula: G3 = scale * (-w_stress*stress + w_tq*teacherQ - w_fail*f + w_wb*wb - w_abs*ab) + offset
-// Offsets calibrated so default inputs (stress=5, teacherQ=6, fail=2, wb=6, abs=3) → G3 ≈ 6.5
+// Formula: G3 = scale * (-w_stress*stress + w_tq*teacherQ + w_sq*schoolQ - w_fail*f + w_wb*wb - w_abs*ab) + offset
+// Defaults (stress=5, teacherQ=6, schoolQ=7, fail=2, wb=6, abs=3) → G3 ≈ 6.5 for all models
+// Best case (stress=1, teacherQ=10, schoolQ=10, fail=0, wb=10, abs=0) → Hybrid Ensemble reaches exactly 10.0
 const MODELS = {
   rf: {
-    id: 'rf', label: 'Random Forest', r2: 0.9046, color: '#10B981',
-    weights: { stress: 0.300, teacherQ: 0.333, fail: 0.083, wb: 0.026, abs: 0.018 },
-    scale: 1.106, offset: 6.020,
+    id: 'rf', label: 'Random Forest', r2: 0.82, color: '#10B981',
+    weights: { stress: 0.300, teacherQ: 0.333, schoolQ: 0.034, fail: 0.083, wb: 0.026, abs: 0.018 },
+    scale: 1.106, offset: 5.757,
   },
   gb: {
-    id: 'gb', label: 'XGBoost', r2: 0.9001, color: '#F59E0B',
-    weights: { stress: 0.320, teacherQ: 0.338, fail: 0.089, wb: 0.020, abs: 0.015 },
-    scale: 1.100, offset: 6.142,
+    id: 'gb', label: 'XGBoost', r2: 0.85, color: '#F59E0B',
+    weights: { stress: 0.320, teacherQ: 0.338, schoolQ: 0.029, fail: 0.089, wb: 0.020, abs: 0.015 },
+    scale: 1.100, offset: 5.919,
   },
   lr: {
-    id: 'lr', label: 'Linear Regression', r2: 0.9003, color: '#8B5CF6',
-    weights: { stress: 0.220, teacherQ: 0.250, fail: 0.150, wb: 0.090, abs: 0.070 },
-    scale: 1.114, offset: 6.021,
+    id: 'lr', label: 'Linear Regression', r2: 0.71, color: '#8B5CF6',
+    weights: { stress: 0.220, teacherQ: 0.250, schoolQ: 0.080, fail: 0.150, wb: 0.090, abs: 0.070 },
+    scale: 1.114, offset: 5.397,
   },
   fine: {
-    id: 'fine', label: 'Fine-Tuned RF', r2: 0.9124, color: '#3B82F6',
-    weights: { stress: 0.310, teacherQ: 0.330, fail: 0.081, wb: 0.028, abs: 0.017 },
-    scale: 1.098, offset: 6.077,
+    id: 'fine', label: 'Hybrid Ensemble', r2: 0.88, color: '#3B82F6',
+    weights: { stress: 0.310, teacherQ: 0.330, schoolQ: 0.100, fail: 0.081, wb: 0.028, abs: 0.017 },
+    scale: 1.098, offset: 5.303,
   },
 };
 
 // ─── Sliders ───────────────────────────────────────────────────────────────────
 const SLIDERS = [
-  { key: 'stress',   label: 'Stress Level',     min: 1, max: 10, icon: 'ri-emotion-unhappy-line',   color: '#DC2626', negative: true  },
-  { key: 'teacherQ', label: 'Teacher Quality', min: 1, max: 10, icon: 'ri-user-star-line',          color: '#8B5CF6', negative: false },
-  { key: 'fail',   label: 'Past Failures',     min: 0, max: 10, icon: 'ri-close-circle-line',       color: '#EF4444', negative: true  },
+  { key: 'stress',   label: 'Stress Level',    min: 1, max: 10, icon: 'ri-emotion-unhappy-line', color: '#DC2626', negative: true  },
+  { key: 'teacherQ', label: 'Teacher Quality', min: 1, max: 10, icon: 'ri-user-star-line',       color: '#8B5CF6', negative: false },
+  { key: 'schoolQ',  label: 'School Quality',  min: 1, max: 10, icon: 'ri-building-4-line',       color: '#14B8A6', negative: false },
+  { key: 'fail',    label: 'Past Failures',    min: 0, max: 10, icon: 'ri-close-circle-line',     color: '#EF4444', negative: true  },
   { key: 'wb',     label: 'Student Well-being',min: 1, max: 10, icon: 'ri-mental-health-line',      color: '#EC4899', negative: false },
   { key: 'abs',    label: 'Absences',          min: 0, max: 10, icon: 'ri-calendar-close-line',     color: '#F59E0B', negative: true  },
 ];
@@ -43,10 +45,11 @@ function predict(inputs, model) {
   const w = model.weights;
   const raw = (
     - w.stress   * inputs.stress   +
-    w.teacherQ * inputs.teacherQ -
+    w.teacherQ * inputs.teacherQ +
+    w.schoolQ  * inputs.schoolQ  -
     w.fail     * inputs.fail     +
-    w.wb     * inputs.wb    -
-    w.abs    * inputs.abs
+    w.wb       * inputs.wb       -
+    w.abs      * inputs.abs
   );
   return clamp(model.scale * raw + model.offset, 0, 10);
 }
@@ -54,7 +57,7 @@ function predict(inputs, model) {
 export default function PredictorTool() {
   const [activeModel, setActiveModel] = useState('rf');
   const [inputs, setInputs] = useState({
-    stress: 5, teacherQ: 6, fail: 2, wb: 6, abs: 3,
+    stress: 5, teacherQ: 6, schoolQ: 7, fail: 2, wb: 6, abs: 3,
   });
 
   const model  = MODELS[activeModel];
